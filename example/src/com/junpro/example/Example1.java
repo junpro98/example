@@ -20,9 +20,8 @@ public class Example1 {
 //		ArrayList<클래스명>해야 합니다요.
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
 //			아래에 있는 connection 메소드를 호출한겁니다용
-			connec();
+			getcon();
 			if(connection == null) {
 				throw new Exception("데이터베이스 연결 안됨");
 			}
@@ -58,26 +57,52 @@ public class Example1 {
 
 //	입력하는 메소드
 	public void input(String id, String pw, String name, int year, String snum, String depart, String mobile1, String mobile2, String address, String email) {
-		// TODO Auto-generated method stub
-		
 		try {
 //			jdbc 드라이버를 클래스에 연결한다는거임
-			Class.forName("com.mysql.jdbc.Driver");
 //			기존에 깔았단 mysql을 클래스에서 연결한다는거임
 //			아래에 있는 connection 메소드를 호출한겁니다용
-			connec();
+			getcon();
 			if(connection == null) {
 //				만약 연결안된다면 아래의 예외처리가 진행된다.
 				throw new Exception("데이터베이스 연결 안됨");
 			}
 			statement = connection.createStatement();
-			int i = statement.executeUpdate("insert into student(id, passwd, name, year, snum, depart, mobile1, mobile2, address, email) values ('" + id + "','" + pw + "','" + name + "','" + year + "','" + snum + "','" + depart + "','" + mobile1 + "','" + mobile2 + "','" + address + "','" + email + "');");
+			int i = statement.executeUpdate("insert into student(id, passwd, name, year, snum, depart, mobile1, mobile2, address, email) values ('" + id + "','" + pw + "','" + name + "'," + year + ",'" + snum + "','" + depart + "','" + mobile1 + "','" + mobile2 + "','" + address + "','" + email + "');");
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {
 			close();
 		}
 	}
+	
+	public ArrayList<Class_more> test02() {
+		ArrayList<Class_more> test02 = new ArrayList<Class_more>();
+		try {
+			getcon();
+			if(connection == null) {
+				throw new Exception("데이터베이스 연결 안됨");
+			}
+			statement = connection.createStatement();
+			resultSet = statement.executeQuery("select id from student;");
+			while(resultSet.next()) {
+				Class_more class_more = new Class_more();
+				class_more.setId(resultSet.getString("id"));
+				test02.add(class_more);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			try {
+				close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return test02;
+	}
+	
+	
+	
 	
 //	샐랙, 입력하는 메소드에서 close가 중복이기 떄문에 따로 메소드로 빼서 거기서 close해준다.
 
@@ -92,10 +117,12 @@ public class Example1 {
 	}
 	
 //	getConnection도 중복이기 떄문에 뺄 수 있다.
-//	그러면 getConnection을 기존 코드에서 지우고 메소드를 호출하면 된다.
-	public void connec() {
+//	그러면 Class.forName과 getConnection을 기존 코드에서 지우고 메소드를 호출하면 된다.
+	public void getcon() {
 		try {
+			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/junpro?characterEncoding=utf-8", "root", "simpsons514!");
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

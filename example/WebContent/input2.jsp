@@ -24,5 +24,7 @@
 	input01.input(id, pw, name, year, snum, depart, mobile1, mobile2, address, email);
 	response.sendRedirect("NewFile.jsp");
 %>
+
+
 </body>
 </html>

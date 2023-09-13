@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="student" class="com.junpro.example.Input_info" scope="page"/>
+<jsp:useBean id="student" class="com.junpro.example.Example1" scope="page"/>
 <%
 			/* requset.getParameter를 통해서 앞에 html에서 입력된걸 받아온다. */
 			String id = request.getParameter("id");
