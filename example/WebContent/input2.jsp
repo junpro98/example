@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="input01" class="com.junpro.example.Input_info2"></jsp:useBean>
+<jsp:useBean id="input01" class="com.junpro.example.Example1"></jsp:useBean>
 <%
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");

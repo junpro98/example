@@ -8,9 +8,9 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="D:/lib/jstl.jar"/>
-	<classpathentry kind="lib" path="D:/lib/mysql-connector-java-5.1.49-bin.jar"/>
-	<classpathentry kind="lib" path="D:/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="D:/lib/standard.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023KANAD/Desktop/프로젝트_이준표/라이브러리/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023KANAD/Desktop/프로젝트_이준표/라이브러리/mysql-connector-java-5.1.49-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023KANAD/Desktop/프로젝트_이준표/라이브러리/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023KANAD/Desktop/프로젝트_이준표/라이브러리/standard.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
