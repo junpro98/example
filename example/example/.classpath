@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023KANAD/Desktop/프로젝트_이준표/라이브러리/mysql-connector-java-5.1.49-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023KANAD/Desktop/프로젝트_이준표/라이브러리/servlet-api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023KANAD/Desktop/프로젝트_이준표/라이브러리/standard.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023KANAD/Desktop/프로젝트_이준표/라이브러리/mybatis-3.5.13.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
