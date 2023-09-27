@@ -10,6 +10,7 @@
 <form action="jun.junpro?control=insert" method="post">
 아이디 : <input type="text" name="id"><br>
 비밀번호 : <input type="password" name="password"><br>
+이름 : <input type="name" name="name"><br>
 성별 : <input type="text" name="sex"><br>
 이메일 : <input type="text" name="eMail"><br>
 활동명 : <input type="text" name="nickName"><br>

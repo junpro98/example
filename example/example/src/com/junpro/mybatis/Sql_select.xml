@@ -7,8 +7,8 @@
 	select * from user;
 	</select>
 	
-	<insert id="insertId">
+	<insert id="insertId" parameterType="com.junpro.dto.UserDTO">
 	insert into user(influUserId, password, name, sex, eMail, nickName, newsAgency, mobileNumber, category, post, address, addr_more, reference)
-	values ('ll', 'll', 'll', 'll', 'll', 'll', 'll', 'll', 'll', 'll', 'll', 'll', 'll');
+	values (#{influUserId}, #{password}, #{name}, #{sex}, #{eMail}, #{nickName}, #{newsAgency}, #{mobileNumber}, #{category}, #{post}, #{address}, #{addr_more}, #{reference});
 	</insert>
 </mapper>

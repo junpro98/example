@@ -23,21 +23,22 @@ public class ControlUser extends HttpServlet{
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		String control =  rq.getParameter("control");
-		Sqlextract sqle = null;
-		Insert insert = null;
+		String control =  rq.getParameter("control"); // 다음 페이지로 넘어갈 때 ?control에서 control을 parameter로 받아옴
+		sqlExtract1 sqle = null; // 인터페이스용 주머니 생성
+		
 		
 		try {
 			if(control.equals("select")) {
-				String servlet1 = sqle.sqlData(rq, rs);
+				
+				sqle = Sqlextract.instance(); // select용 인터페이스
+				sqle.sqlData(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("link_ex1.jsp");
 //				link_ex1.jsp로 넘겨 주면 된다.
 				re.forward(rq, rs);	
 			} else if(control.equals("insert")) {
-				
-				String servlet2 = insert.sqlData(rq, rs);
-				RequestDispatcher re = rq.getRequestDispatcher("link_ex1.jsp");
-//				link_ex1.jsp로 넘겨 주면 된다.
+				sqle = Insert.instance(); // insert용 인터페이스
+				sqle.sqlData(rq, rs); 
+				RequestDispatcher re = rq.getRequestDispatcher("link_ex3.jsp");
 				re.forward(rq, rs);	
 				
 			} else {
