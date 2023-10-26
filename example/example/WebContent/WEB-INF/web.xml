@@ -9,4 +9,39 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+
+<servlet-name>finad</servlet-name>
+
+<servlet-class>com.finad23.control.FinAD</servlet-class>
+
+</servlet>
+
+
+<servlet-mapping>
+
+<servlet-name>finad</servlet-name>
+
+<url-pattern> *.finad</url-pattern>
+
+</servlet-mapping>
+
+
+<servlet>
+
+<servlet-name>finad23</servlet-name>
+
+<servlet-class>com.finad23.control.FinadSecController</servlet-class>
+
+</servlet>
+
+
+<servlet-mapping>
+
+<servlet-name>finad23</servlet-name>
+
+<url-pattern> *.finad23</url-pattern>
+
+</servlet-mapping>
+  
 </web-app>

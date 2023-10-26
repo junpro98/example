@@ -18,8 +18,8 @@ import action.BoardWriteProAction;
 import vo.ActionForward;
 
 @WebServlet("*.bo")
-public class BoardFrontController extends javax.servlet.http.HttpServlet 
-{
+public class BoardFrontController extends javax.servlet.http.HttpServlet {
+	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		

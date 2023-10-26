@@ -5,7 +5,6 @@
 	BoardBean article = (BoardBean)request.getAttribute("article");
     String nowPage = (String)request.getAttribute("page");
     System.out.println(nowPage);%>
-
 <!DOCTYPE html>
 <html>
 <head>

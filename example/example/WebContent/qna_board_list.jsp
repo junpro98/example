@@ -14,6 +14,7 @@
 	int endPage=pageInfo.getEndPage();
 %>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,9 +84,10 @@ if(articleList != null && listCount > 0){
 				<td><%=articleList.get(i).getBOARD_NUM()%></td>
 
 				<td>
-					<%if(articleList.get(i).getBOARD_RE_LEV()!=0){ %> <%for(int a=0;a<=articleList.get(i).getBOARD_RE_LEV()*2;a++){ %>
-					&nbsp; <%} %> ▶ <%}else{ %> ▶ <%} %> <a
-					href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM()%>&page=<%=nowPage%>">
+					<%if(articleList.get(i).getBOARD_RE_LEV()!=0){ %> 
+					<%for(int a=0;a<=articleList.get(i).getBOARD_RE_LEV()*2;a++){ %>
+					&nbsp; <%} %> ▶ <%}else{ %> ▶ <%} %> 
+					<a href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM()%>&page=<%=nowPage%>">
 						<%=articleList.get(i).getBOARD_SUBJECT()%>
 				</a>
 				</td>
