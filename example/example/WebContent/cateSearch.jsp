@@ -3,6 +3,7 @@
 <%@ page import="com.finad23.DTO.CateSearchDTO"%>
 <%@ page import="java.text.DecimalFormat"%>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">

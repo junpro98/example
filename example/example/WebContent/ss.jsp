@@ -2,6 +2,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.finad23.DTO.CategoryFilterDTO"%>
 <%@ page import="java.text.DecimalFormat"%>
+
 <!DOCTYPE html>
 <html>
 <head>
