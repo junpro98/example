@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-반갑다
-<br>
-오늘 저녁에 어깨운동 해야지
-<br>
-벌써부터 즐겁구만
-<br>
-<img src="assets/images/nohog.png" />
+오늘 저녁에는 어깨 운동
 </body>
 </html>

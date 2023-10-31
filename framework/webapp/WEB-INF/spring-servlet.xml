@@ -13,6 +13,10 @@ http://www.springframework.org/schema/aop/spring-aop.xsd    http://www.springfra
 http://www.springframework.org/schema/beans/spring-beans.xsd    http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
 
-<context:annotation-config />
-<context:component-scan base-package="com.framework.spring.controller" />
+	<context:annotation-config />
+	<context:component-scan
+		base-package="com.framework.spring.controller" />
+	<mvc:annotation-driven />
+	<mvc:default-servlet-handler />
+
 </beans>
