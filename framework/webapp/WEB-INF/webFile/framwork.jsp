@@ -10,8 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-반갑다
-<br>
 오늘 저녁에 유산소랑 코어운동 해야지~
 <br>
 벌써부터 즐겁구만

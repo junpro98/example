@@ -12,11 +12,11 @@ import com.framwork.spring.vo.NewVO;
 
 @Repository //이걸 의존성으로 작업할 걸 세팅 해둔다는 말입니다용 컨트롤러에 autowired한걸 어딘가에 쓸 거다~ 라는거임.
 public class ADAO {
-	Connection connection = null;
-	Statement statement = null;
-	ResultSet resultSet = null;
 	
 	public ArrayList<NewVO> newVO() {
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
 		ArrayList<NewVO> list = new ArrayList<NewVO>();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -47,5 +47,29 @@ public class ADAO {
 			}
 		}
 		return list;
+	}
+	
+	public void insert(NewVO vo) {
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/junpro?characterEncoding=utf-8&useUnicode=true", "root", "123456");
+			if(connection == null) {
+				throw new Exception("데이터베이스 연결 안됨<br>");
+			}
+			statement = connection.createStatement();
+			int i = statement.executeUpdate("INSERT into junpro.junpro(name, id, pw, date) values ('" + vo.getName() + "','" + vo.getId() + "','" + vo.getPw() + "','" + vo.getDate() +"');");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			try {
+				statement.close();
+				connection.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
 	}
 }

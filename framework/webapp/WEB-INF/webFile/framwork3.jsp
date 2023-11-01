@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="">
+<form action="junpro3" method="post">
 	아이디 : <input type="text" name="id">
 	<br>
 	이름 : <input type="text" name="name">
