@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.framwork.spring.vo.NewVO;
 
 @Repository //이걸 의존성으로 작업할 걸 세팅 해둔다는 말입니다용 컨트롤러에 autowired한걸 어딘가에 쓸 거다~ 라는거임.
-public class NewDAO {
+public class ADAO {
 	Connection connection = null;
 	Statement statement = null;
 	ResultSet resultSet = null;

@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.framwork.spring.repository.*" %>
-<%@ page import="com.framwork.spring.vo.*" %>
-<%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-// NewDAO dao = new NewDAO();
-// ArrayList<NewVO> list = dao.newVO();
-
-
-%>
+<form action="">
+	아이디 : <input type="text" name="id">
+	<br>
+	이름 : <input type="text" name="name">
+	<br>
+	비밀번호 : <input type="password" name="pw">
+	<br>
+	생년월일 : <input type="text" name="date">
+	<br>
+	<input type="submit" value="확인">
+</form>
 </body>
 </html>
