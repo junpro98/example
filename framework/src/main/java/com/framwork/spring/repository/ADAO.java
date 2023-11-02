@@ -72,4 +72,34 @@ public class ADAO {
 			}
 		}
 	}
+	
+	public void delete(String pw, String pk) {
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		System.out.println(pw);
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/junpro?characterEncoding=utf-8&useUnicode=true", "root", "123456");
+			if(connection == null) {
+				throw new Exception("데이터베이스 연결 안됨");
+			}
+			statement = connection.createStatement();
+			
+			int i = statement.executeUpdate("DELETE FROM junpro WHERE filednum = " + pk + " AND pw = '" + pw + "'");
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		} finally {
+			try {
+				resultSet.close();
+				statement.close();
+				connection.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				System.out.println(e2);
+			}
+		}
+	}
+	
 }

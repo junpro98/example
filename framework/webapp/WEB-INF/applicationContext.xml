@@ -21,7 +21,7 @@ http://www.springframework.org/schema/task/spring-task.xsd">
 <context:annotation-config/>
 
 	<context:component-scan
-		base-package="com.framwork.spring.repository">
+		base-package="com.framwork.spring.repository, com.framwork.spring.service">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Repository" />
 		<context:include-filter type="annotation"

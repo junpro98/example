@@ -19,17 +19,41 @@
 <br>
 <br>
 <br>
-
 <%
 	ArrayList<NewVO> list = (ArrayList<NewVO>)request.getAttribute("list");
 	for(int i = 0; i < list.size(); i++) {
-		out.println("pk값 : " + list.get(i).getFilednum());
-		out.println("아이디 : " + list.get(i).getId());
-		out.println("이름 : " + list.get(i).getName());
-		out.println("비밀번호 : " + list.get(i).getPw());
-		out.println("생년월일 : " + list.get(i).getDate());
-		out.println("<br>");
-	}
+	int num = (list.get(i).getFilednum());
+	String id = (list.get(i).getId());
+	String name = (list.get(i).getName());
+	String pw = (list.get(i).getPw());
+	String date = (list.get(i).getDate());
+		out.println("pk값 : " + num);
+		out.println("아이디 : " + id);
+		out.println("이름 : " + name);
+		out.println("생년월일 : " + date);
+		%>
+    <form action="delete" method="post">
+        <input type="hidden" name="pk" value="<%= num %>">
+        <input type="button" name="delete_btn" value="삭제" onclick="submitForm('<%= num %>')">
+    </form>
+<%
+    out.println("<br>");
+}
 %>
+
+<script>
+function submitForm(pk) {
+    var form = document.createElement('form');
+    form.action = 'delete'; // 삭제 처리를 담당하는 서블릿 또는 JSP 페이지 URL로 설정
+    form.method = 'post';
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'pk';
+    input.value = pk;
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+}
+</script>
 </body>
 </html>
