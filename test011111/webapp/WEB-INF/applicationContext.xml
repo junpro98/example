@@ -17,11 +17,10 @@ http://www.springframework.org/schema/tx/spring-tx.xsd    http://www.springframe
 http://www.springframework.org/schema/util/spring-util.xsd    http://www.springframework.org/schema/task
 http://www.springframework.org/schema/task/spring-task.xsd">
 
-
 	<context:annotation-config />
 
 	<context:component-scan
-		base-package="com.framwork.spring.repository, com.framwork.spring.service">
+		base-package="com.jun.spring.repository, com.jun.spring.service">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Repository" />
 		<context:include-filter type="annotation"
@@ -29,24 +28,21 @@ http://www.springframework.org/schema/task/spring-task.xsd">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Component" />
 	</context:component-scan>
-
+	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/junpro?characterEncoding=utf-8" />
+		<property name="url" value="jdbc:mysql://localhost:3306/junpro" />
 		<property name="username" value="root" />
 		<property name="password" value="123456" />
 	</bean>
-
+	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="configLocation" value="classpath:com/framwork/mybatis/configuration.xml" />
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:com/jun/mybatis/configuration.xml"/>
 	</bean>
 	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
-
-
-
-
+	
 </beans>

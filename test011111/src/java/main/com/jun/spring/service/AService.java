@@ -1,4 +1,4 @@
-package com.framwork.spring.service;
+package com.jun.spring.service;
 
 
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.framwork.spring.repository.ADAO;
-import com.framwork.spring.vo.NewVO;
+import com.jun.spring.repository.ADAO;
+import com.jun.spring.vo.NewVO;
 
 @Service
 public class AService { // 데이터 연결해서 처리하는 작업 클래스

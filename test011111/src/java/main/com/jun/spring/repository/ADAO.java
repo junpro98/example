@@ -1,4 +1,4 @@
-package com.framwork.spring.repository;
+package com.jun.spring.repository;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.framwork.spring.vo.NewVO;
+import com.jun.spring.vo.NewVO;
 
 @Repository //이걸 의존성으로 작업할 걸 세팅 해둔다는 말입니다용 컨트롤러에 autowired한걸 어딘가에 쓸 거다~ 라는거임.
 public class ADAO {
@@ -58,9 +58,9 @@ public class ADAO {
 //		}
 	}
 	
-//	public void insert(NewVO vo) {
-//		Connection connection = null;
-//		Statement statement = null;
+	public void insert(NewVO vo) {
+		int insert = sqlSession.insert("insert", vo);
+		
 //		try {
 ////			Class.forName("com.mysql.jdbc.Driver");
 //			connection = data.getConnection();
@@ -79,13 +79,10 @@ public class ADAO {
 //				// TODO: handle exception
 //			}
 //		}
-//	}
+	}
 	
-//	public void delete(String pw, String pk) {
-//		Connection connection = null;
-//		Statement statement = null;
-//		ResultSet resultSet = null;
-//		System.out.println(pw);
+	public void delete(String pw, String pk) {
+		int delete = sqlSession.delete("delete", pw);
 //		try {
 ////			Class.forName("com.mysql.jdbc.Driver");
 ////			Class.forName("com.mysql.jdbc.Driver");
@@ -107,6 +104,6 @@ public class ADAO {
 //				System.out.println(e2);
 //			}
 //		}
-//	}
+	}
 	
 }

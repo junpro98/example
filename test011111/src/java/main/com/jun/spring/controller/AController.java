@@ -1,4 +1,4 @@
-package com.framework.spring.controller;
+package com.jun.spring.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.framwork.spring.service.AService;
-import com.framwork.spring.vo.NewVO;
+import com.jun.spring.service.AService;
+import com.jun.spring.vo.NewVO;
 
 @Controller
 public class AController {
@@ -48,24 +48,29 @@ public class AController {
 		return "WEB-INF/webFile/framwork3.jsp";
 	}
 	
-//	@RequestMapping("/junpro3")
-//	public String conn3(@ModelAttribute NewVO vo) { 
-//		// 만들어둔 모델링을 스프링에서 알아서 가져와서 사용하는 어노테이션인거다
-//		// 어노테이션에 들어가는 타입은 오브젝트 타입만 가능하다.
-//		// jsp파일에서 input name이랑 VO에 만들어둔 거랑 같아야한다. ex) id - id, pw - pw ...
-//		aser.insert(vo);
-//		return "/select";
-//	}
-//	
-//	@RequestMapping("/delete")
-//	public String dele(@RequestParam String pk) {
-//		return "WEB-INF/webFile/framwork4.jsp";
-//	}
-//	
-//	@RequestMapping("/check")
-//	public String check(@RequestParam String pw, @RequestParam String pk) {
-////		System.out.println(pw);
-//		aser.delete(pw, pk);
-//		return "/select";
-//	}
+	@RequestMapping("/junpro3")
+	public String conn3(@ModelAttribute NewVO vo) { 
+		// 만들어둔 모델링을 스프링에서 알아서 가져와서 사용하는 어노테이션인거다
+		// 어노테이션에 들어가는 타입은 오브젝트 타입만 가능하다.
+		// jsp파일에서 input name이랑 VO에 만들어둔 거랑 같아야한다. ex) id - id, pw - pw ...
+		aser.insert(vo);
+		return "/select";
+	}
+	
+	@RequestMapping("/delete")
+	public String dele(@RequestParam String pk) {
+		return "WEB-INF/webFile/framwork4.jsp";
+	}
+	
+	@RequestMapping("/check")
+	public String check(@RequestParam String pw, @RequestParam String pk) {
+//		System.out.println(pw);
+		aser.delete(pw, pk);
+		return "/select";
+	}
+	
+	@RequestMapping("/index")
+	public String index() {
+		return "WEB-INF/webFile/index.jsp";
+	}
 }

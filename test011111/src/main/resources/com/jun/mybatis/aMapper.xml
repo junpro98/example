@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper_name">
+	<select id="select" resultType="com.jun.spring.vo.NewVO">
+		SELECT * FROM junpro.junpro;
+	</select>
+	<insert id="insert" parameterType="com.jun.spring.vo.NewVO">
+		INSERT into junpro.junpro(name, id, pw, date) values (#{name},#{id},#{pw},#{date});
+	</insert>
+	<delete id="delete" parameterType="com.jun.spring.vo.NewVO">
+		DELETE FROM junpro.junpro WHERE pw =  #{pw};
+	</delete>
+</mapper>
