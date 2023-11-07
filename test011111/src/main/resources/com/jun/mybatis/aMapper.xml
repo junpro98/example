@@ -10,4 +10,7 @@
 	<delete id="delete" parameterType="com.jun.spring.vo.NewVO">
 		DELETE FROM junpro.junpro WHERE pw =  #{pw};
 	</delete>
+	<select id="login" resultType="com.jun.spring.vo.DeleteVO">
+		SELECT * FROM junpro.junpro where id = #{id} AND pw = #{pw};
+	</select>
 </mapper>

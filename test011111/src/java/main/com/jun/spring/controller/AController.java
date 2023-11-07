@@ -2,14 +2,19 @@ package com.jun.spring.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.jun.spring.service.AService;
+import com.jun.spring.vo.DeleteVO;
+import com.jun.spring.vo.LoginVO;
 import com.jun.spring.vo.NewVO;
 
 @Controller
@@ -20,7 +25,6 @@ public class AController {
 	
 	@Autowired // service 객체를 주입 받은거임!
 	private AService aser;
-	
 	
 	@RequestMapping("/select")
 	public String conn1(Model jun) { // model은 모델링을 자체적으로 찾아간다.
@@ -58,19 +62,32 @@ public class AController {
 	}
 	
 	@RequestMapping("/delete")
-	public String dele(@RequestParam String pk) {
+	public String dele(@ModelAttribute DeleteVO delVO) {
+		aser.delete(delVO);
 		return "WEB-INF/webFile/framwork4.jsp";
 	}
 	
 	@RequestMapping("/check")
-	public String check(@RequestParam String pw, @RequestParam String pk) {
-//		System.out.println(pw);
-		aser.delete(pw, pk);
+	public String check(@ModelAttribute DeleteVO delVO) {
+//		System.out.println();
+		aser.delete(delVO);
 		return "/select";
 	}
 	
 	@RequestMapping("/index")
 	public String index() {
 		return "WEB-INF/webFile/index.jsp";
+	}
+	
+	@RequestMapping("/login")
+	public String login(@RequestParam String login_id, @RequestParam String login_pw) {
+	    boolean a = true;
+	    
+	    if (a == true) {
+	        aser.login(login_id, login_pw);
+	        return "/WEB-INF/webFile/login.jsp";
+	    } else {
+	        return null;
+	    }
 	}
 }

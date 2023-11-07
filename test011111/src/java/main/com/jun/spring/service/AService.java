@@ -3,10 +3,15 @@ package com.jun.spring.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.jun.spring.repository.ADAO;
+import com.jun.spring.vo.DeleteVO;
+import com.jun.spring.vo.LoginVO;
 import com.jun.spring.vo.NewVO;
 
 @Service
@@ -26,8 +31,11 @@ public class AService { // 데이터 연결해서 처리하는 작업 클래스
 		adao.insert(vo);
 	}
 	
-	public void delete(String pw, String pk) {
-		adao.delete(pw, pk);
+	public void delete(DeleteVO delVO) {
+		adao.delete(delVO);
 		
+	}
+	public boolean login(String login_id, String login_pw) {
+	    return adao.login(login_id, login_pw);
 	}
 }

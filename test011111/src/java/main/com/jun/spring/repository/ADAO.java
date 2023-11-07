@@ -3,14 +3,20 @@ package com.jun.spring.repository;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 
+import com.jun.spring.vo.DeleteVO;
+import com.jun.spring.vo.LoginVO;
 import com.jun.spring.vo.NewVO;
 
 @Repository //이걸 의존성으로 작업할 걸 세팅 해둔다는 말입니다용 컨트롤러에 autowired한걸 어딘가에 쓸 거다~ 라는거임.
@@ -81,8 +87,8 @@ public class ADAO {
 //		}
 	}
 	
-	public void delete(String pw, String pk) {
-		int delete = sqlSession.delete("delete", pw);
+	public void delete(DeleteVO delVO) {
+		int delete = sqlSession.delete("delete", delVO);
 //		try {
 ////			Class.forName("com.mysql.jdbc.Driver");
 ////			Class.forName("com.mysql.jdbc.Driver");
@@ -105,5 +111,20 @@ public class ADAO {
 //			}
 //		}
 	}
+	
+	public boolean login(String login_id, String login_pw) {
+	    Map<String, String> login = new HashMap<>();
+	    login.put("loginId", login_id);
+	    login.put("loginPw", login_pw);
+
+	    String a = sqlSession.selectOne("login", login);
+
+	    if (a != null) {
+	        return true; // 데이터베이스에서 일치하는 레코드를 찾았음
+	    } else {
+	        return false; // 데이터베이스에서 일치하는 레코드를 찾지 못함
+	    }
+	}
+
 	
 }
