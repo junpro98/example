@@ -1,12 +1,11 @@
 package com.jun.spring.vo;
 
 public class LoginVO {
-	private String id, pw;
+	private String id, pw, name;
 
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -17,5 +16,12 @@ public class LoginVO {
 
 	public void setPw(String pw) {
 		this.pw = pw;
+	}
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 }

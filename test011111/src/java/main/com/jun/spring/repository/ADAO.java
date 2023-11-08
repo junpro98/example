@@ -112,19 +112,19 @@ public class ADAO {
 //		}
 	}
 	
-	public boolean login(String login_id, String login_pw) {
+	public List<LoginVO> login(String login_id, String login_pw) {
 	    Map<String, String> login = new HashMap<>();
-	    login.put("loginId", login_id);
-	    login.put("loginPw", login_pw);
+	    login.put("id", login_id);
+	    login.put("pw", login_pw);
 
-	    String a = sqlSession.selectOne("login", login);
-
-	    if (a != null) {
-	        return true; // 데이터베이스에서 일치하는 레코드를 찾았음
-	    } else {
-	        return false; // 데이터베이스에서 일치하는 레코드를 찾지 못함
-	    }
+//	    System.out.println(login);
+	    
+	    List<LoginVO> list = sqlSession.selectList("login", login);
+		
+	    return list;
 	}
 
-	
+	public void detail() {
+		sqlSession.selectOne("");
+	}
 }

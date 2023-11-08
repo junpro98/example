@@ -35,7 +35,13 @@ public class AService { // 데이터 연결해서 처리하는 작업 클래스
 		adao.delete(delVO);
 		
 	}
-	public boolean login(String login_id, String login_pw) {
-	    return adao.login(login_id, login_pw);
+	public List<LoginVO> login(String login_id, String login_pw) {
+	    List<LoginVO> list = adao.login(login_id, login_pw);
+//	    System.out.println(login_id);
+//	    System.out.println(login_pw);
+		return list;
+	}
+	public void detail() {
+		
 	}
 }
