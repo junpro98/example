@@ -13,4 +13,7 @@
 	<select id="login" resultType="com.jun.spring.vo.LoginVO" parameterType="com.jun.spring.vo.LoginVO">
 		SELECT * FROM junpro.junpro where id = #{id} AND pw = #{pw};
 	</select>
+	<select id="detail" resultType="com.jun.spring.vo.DetailVO" parameterType="com.jun.spring.vo.DetailVO">
+		SELECT * FROM junpro.junpro where name = '${name}';
+	</select>
 </mapper>

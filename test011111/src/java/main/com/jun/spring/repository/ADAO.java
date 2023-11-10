@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 
 import com.jun.spring.vo.DeleteVO;
+import com.jun.spring.vo.DetailVO;
 import com.jun.spring.vo.LoginVO;
 import com.jun.spring.vo.NewVO;
 
@@ -124,7 +125,8 @@ public class ADAO {
 	    return list;
 	}
 
-	public void detail() {
-		sqlSession.selectOne("");
+	public List<DetailVO> detail(String name) {
+		List<DetailVO> list = sqlSession.selectList("detail", name);
+		return list;
 	}
 }

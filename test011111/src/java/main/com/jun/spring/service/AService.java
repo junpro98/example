@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 
 import com.jun.spring.repository.ADAO;
 import com.jun.spring.vo.DeleteVO;
+import com.jun.spring.vo.DetailVO;
 import com.jun.spring.vo.LoginVO;
 import com.jun.spring.vo.NewVO;
 
@@ -41,7 +42,8 @@ public class AService { // 데이터 연결해서 처리하는 작업 클래스
 //	    System.out.println(login_pw);
 		return list;
 	}
-	public void detail() {
-		
+	public List<DetailVO> detail(String name) {
+		List<DetailVO> list = adao.detail(name);
+		return list;
 	}
 }

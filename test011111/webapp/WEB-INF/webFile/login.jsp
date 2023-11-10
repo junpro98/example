@@ -3,14 +3,11 @@
 <%@ page import="com.jun.spring.repository.*"%>
 <%@ page import="com.jun.spring.vo.*"%>
 <%@ page import="java.util.*"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	String id = request.getParameter("login_id");
-	String pw = request.getParameter("login_pw");
-	session.setAttribute("id", id);
-	session.setAttribute("pw", pw);
 	List<LoginVO> list = (List<LoginVO>) request.getAttribute("list");
 	List<NewVO> list1 = (List<NewVO>) request.getAttribute("list1");
+	String sessionId = (String) session.getAttribute("sessionId");
+	String sessionPw = (String) session.getAttribute("sessionPw");
 %>
 <!DOCTYPE html>
 <html>
@@ -21,7 +18,7 @@
 <body>
 	<h1><%=list.get(0).getName()%>님 반갑습니다!
 	</h1>
-	<table>
+	<table style="border: 1px solid black">
 		<thead>
 			<tr>
 				<th>이름</th>
@@ -36,10 +33,10 @@
 				String pw123 = list1.get(i).getPw();
 		%>
 		<tbody>
-			<tr onclick="location.href='detail'" style="cursor:pointer;">
-				<td><%= name%></td>
-				<td><%= id123%></td>
-				<td><%= pw123%></td>
+			<tr>
+				<td onclick="location.href='detail?name=<%= name %>'" style="cursor: pointer;"><%=name%></td>
+				<td><%=id123%></td>
+				<td><%=pw123%></td>
 			</tr>
 		</tbody>
 		<%

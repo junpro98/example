@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.jun.spring.service.AService;
 import com.jun.spring.vo.DeleteVO;
+import com.jun.spring.vo.DetailVO;
 import com.jun.spring.vo.LoginVO;
 import com.jun.spring.vo.NewVO;
 
@@ -70,7 +71,7 @@ public class AController {
 	public String check(@ModelAttribute DeleteVO delVO) {
 //		System.out.println();
 		aser.delete(delVO);
-		return "/select";
+		return "/index";
 	}
 
 	@RequestMapping("/index")
@@ -79,7 +80,7 @@ public class AController {
 	}
 
 	@RequestMapping("/login")
-	public String login(@RequestParam String login_id, @RequestParam String login_pw, Model login) {
+	public String login(@RequestParam String login_id, @RequestParam String login_pw, Model login, HttpSession session) {
 		
 //		System.out.println(login_id);
 //		System.out.println(login_pw);
@@ -88,6 +89,8 @@ public class AController {
 		if(list != null && !list.isEmpty()) {
 			login.addAttribute("list", list);
 			login.addAttribute("list1", list1);
+			session.setAttribute("sessionId", login_id);
+			session.setAttribute("sessionPw", login_pw);
 			return "/WEB-INF/webFile/login.jsp";
 		} else {			
 			return "/index";
@@ -95,9 +98,12 @@ public class AController {
 	}
 	
 	@RequestMapping("/detail")
-	public String detail(@RequestParam String name) {
-		
-		
-		return "";
+	public String detail(@RequestParam String name, Model detail) {
+		List<DetailVO> list = aser.detail(name);
+		if(name.equals(name)) {
+			detail.addAttribute("name", list);
+			return "/WEB-INF/webFile/detail.jsp";			
+		} 
+			return null;
 	}
 }

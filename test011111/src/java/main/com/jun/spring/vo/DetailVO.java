@@ -1,6 +1,6 @@
 package com.jun.spring.vo;
 
-public class DeleteVO {
+public class DetailVO {
 	private String name, id, pw, date;
 
 	public String getName() {
