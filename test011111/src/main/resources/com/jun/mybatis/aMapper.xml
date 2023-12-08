@@ -16,4 +16,7 @@
 	<select id="detail" resultType="com.jun.spring.vo.DetailVO" parameterType="com.jun.spring.vo.DetailVO">
 		SELECT * FROM junpro.junpro where name = '${name}';
 	</select>
+	<update id="fileup" parameterType="com.jun.spring.vo.FileUpVO">
+		UPDATE junpro.junpro SET file = '#{file}' WHERE id = '#{id}';
+	</update>
 </mapper>

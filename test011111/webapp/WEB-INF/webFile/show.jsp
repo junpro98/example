@@ -8,8 +8,13 @@
 </head>
 <body>
 게시글이 삭제 되었습니다.
-<form action="" method="post">
-	<input type="button" value="돌아가기" name="button">
+<form action="index" method="post">
+	<input type="button" value="돌아가기" name="button" onclick="show()">
 </form>
+<script>
+	function show(button) {
+		window.location.href = "index";
+	}
+</script>
 </body>
 </html>

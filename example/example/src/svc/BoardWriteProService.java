@@ -24,7 +24,6 @@ public class BoardWriteProService {
 		
 		close(con);
 		return isWriteSuccess;
-		
 	}
 
 }

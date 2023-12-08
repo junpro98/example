@@ -134,8 +134,8 @@ public class Mypage {
 //	커넥?�� ?��번에 모�?거임 ?��고싶?���? 메소?�� ?��출하면됨.
 	public void getcon() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?characterEncoding=utf-8", "root", "123456");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection("jdbc:mysql://13.209.65.121:3306/project?characterEncoding=utf-8", "root", "123456");
 			if(connection == null) {
 //				throw?�� ?��?��처리�? 강제�? ?��?��?��거고
 //				throws?�� 메소?�� ?��?�� ?��?��?�� ?��?�� 메소?���? ?��?�� ?��?���? ?���? ?�� ?��?���?�? ?��?��?��?�� ?�� ?��?��?��?��!

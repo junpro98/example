@@ -14,6 +14,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.jun.spring.vo.DeleteVO;
 import com.jun.spring.vo.DetailVO;
@@ -128,5 +129,13 @@ public class ADAO {
 	public List<DetailVO> detail(String name) {
 		List<DetailVO> list = sqlSession.selectList("detail", name);
 		return list;
+	}
+	
+	public void fileup(String id, MultipartFile file) {
+		Map<String, Object> update = new HashMap<>();
+		update.put("id", id);
+		update.put("file", file);
+		
+		int update2 = sqlSession.update("fileup", update);
 	}
 }

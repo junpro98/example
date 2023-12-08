@@ -31,8 +31,10 @@
 		<input type="button" value="삭제" name="delete3" onclick="delete1('<%= pw%>')">
 		<input type="hidden" value="<%= name %>" name="name">		
 	</form>
-	<form action="fileup" method="post">
-		<input type="button" value="첨부파일 업로드하기" name="file">
+	<form action="fileup" method="post" enctype="multipart/form-data">
+		<input type="file" name="file">
+		<input type="hidden" name="id" value="<%= id%>">
+		<input type="submit" value="첨부파일 업로드하기">
 	</form>
 	<%
 		}

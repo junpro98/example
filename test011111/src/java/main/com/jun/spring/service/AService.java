@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.jun.spring.repository.ADAO;
 import com.jun.spring.vo.DeleteVO;
@@ -45,5 +46,8 @@ public class AService { // 데이터 연결해서 처리하는 작업 클래스
 	public List<DetailVO> detail(String name) {
 		List<DetailVO> list = adao.detail(name);
 		return list;
+	}
+	public void fileup(String id, MultipartFile file) {
+		adao.fileup(id, file);
 	}
 }

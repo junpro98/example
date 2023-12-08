@@ -13,8 +13,8 @@ public class XXXXXXFreeBoardWrite {
 		Statement statement = null;
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "123456");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection("jdbc:mysql://13.209.65.121:3306/project", "root", "123456");
 			statement = connection.createStatement();
 			statement.executeUpdate("insert into freeboard(freeboardWriter, freeboardName, freeboardText, freeboardDate, freeboardViews) values ('"
 					+ boardDTO.getName() + "','"

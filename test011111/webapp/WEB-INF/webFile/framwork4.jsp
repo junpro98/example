@@ -12,7 +12,7 @@
 		String sessionId = (String) session.getAttribute("sessionId");
 		String sessionPw = (String) session.getAttribute("sessionPw");
 	%>
-	<form action="check">
+	<form action="check" method="post">
 		<input type="password" placeholder="비밀번호를 입력해주세요" name="pw"> 
 		<input type="hidden" name="<%=name%>" value="name"> 
 		<input type="submit" value="확인">
